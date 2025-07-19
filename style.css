@@ -60,6 +60,7 @@ input[type="checkbox"] {
 }
 .bookcard-footer {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   margin-top: auto;
@@ -72,4 +73,15 @@ input[type="checkbox"] {
   font-weight: bold;
   padding: 2px;
   text-align: center;
+}
+.status-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+.status {
+  margin-right: 2px;
+  font-size: 14px;
+  color: #666;
 }
