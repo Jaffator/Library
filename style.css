@@ -55,6 +55,7 @@ dialog {
   opacity: 0.75;
 }
 .bookcard-container {
+  margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
