@@ -55,10 +55,10 @@ dialog {
   opacity: 0.75;
 }
 .bookcard-container {
-  margin: 20px auto;
+  margin: 100px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   /* align-items: flex-start; */
   flex-direction: row;
 }
