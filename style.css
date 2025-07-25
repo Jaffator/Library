@@ -1,6 +1,58 @@
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  background: linear-gradient(90deg, #616166 0%, #4f477a 100%);
+}
+dialog {
+  width: 550px;
+  height: 300px;
+  border-radius: 4px;
+  border: none;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+}
+.dialog-header {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0;
+  margin-top: -10px;
+  /* margin-top: -15px; */
+  justify-content: flex-start;
+  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+}
+.dialog-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  width: 100%;
+  gap: 10px;
+  margin-top: auto;
+}
+
+::backdrop {
+  background: rgba(105, 104, 104, 0.8);
+  backdrop-filter: blur(10px);
+  opacity: 0.75;
 }
 .bookcard-container {
   display: flex;
@@ -32,14 +84,20 @@ input[type="checkbox"] {
   cursor: pointer;
   accent-color: green;
 }
+.btn-add {
+  background-color: #6c63b5;
+}
 .btn-delete {
   background-color: #ff4d4d;
+}
+.btn {
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
+  font-style: initial;
 }
 .btn-delete:hover {
   background-color: #a01414;
@@ -66,13 +124,24 @@ input[type="checkbox"] {
   margin-top: auto;
 }
 .header {
-  background-color: rgb(33, 35, 114);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-size: 15px;
-
   font-weight: bold;
   padding: 2px;
-  text-align: center;
+  position: relative;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn-add:hover {
+  background-color: #7a6ae0;
 }
 .status-container {
   display: flex;
@@ -84,4 +153,40 @@ input[type="checkbox"] {
   margin-right: 2px;
   font-size: 14px;
   color: #666;
+}
+.form-row {
+  width: 80%;
+  display: flex;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  width: 150px; /* pevná šířka pro zarovnání */
+  margin-right: 10px;
+  text-align: left;
+}
+
+.form-row input {
+  flex: 1;
+}
+input {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box; /* zajistí, že padding a border jsou zahrnuty v šířce */
+}
+input:focus {
+  border: 1px solid #007bff; /* změna tloušťky a barvy */
+  outline: none; /* odstraní modré blikající okraje v Chrome */
+}
+
+#confirmBtn {
+  background-color: #60c06d;
+  color: white;
+}
+#confirmBtn:hover {
+  background-color: #397040;
 }
