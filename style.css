@@ -1,15 +1,32 @@
-body {
+:root {
   font-family: "Roboto", sans-serif;
-  margin: 0;
-  background: linear-gradient(90deg, #616166 0%, #4f477a 100%);
+  --bg-dark: hsl(0, 0%, 0%);
+  --bg-lighter: hsl(0, 0%, 5%);
+  --bg-light: hsl(0, 0%, 10%);
+  --bg-lightest: hsl(0, 0%, 15%);
+  --text: hsl(0, 0%, 95%);
+  --text-muted: hsl(0, 0%, 70%);
+}
+
+body.light {
+  --bg-dark: hsl(0, 0%, 90%);
+  --bg-lighter: hsl(0, 0%, 95%);
+  --bg-light: hsl(0, 0%, 100%);
+  --text: hsl(0, 0%, 5%);
+  --text-muted: hsl(0, 0%, 30%);
+}
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-muted);
 }
 dialog {
   width: 550px;
   height: 300px;
-  border-radius: 4px;
-  border: none;
+  border-radius: 10px;
+  border: 1px solid var(--bg);
+  border-color: var(--bg);
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--bg-lighter);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .dialog-container {
@@ -24,13 +41,16 @@ dialog {
   align-items: flex-start;
   padding-top: 0;
   margin-top: -10px;
-  /* margin-top: -15px; */
+  color: var(--text);
   justify-content: flex-start;
-  color: #333;
   font-size: 12px;
   font-weight: bold;
 }
+input {
+  background-color: hsl(0, 0%, 90%);
+}
 .dialog-content {
+  color: var(--text-muted);
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -50,8 +70,8 @@ dialog {
 }
 
 ::backdrop {
-  background: rgba(105, 104, 104, 0.8);
-  backdrop-filter: blur(10px);
+  /* background: hsl(0, 0%, 20%); */
+  backdrop-filter: blur(5px);
   opacity: 0.75;
 }
 .bookcard-container {
@@ -70,13 +90,14 @@ dialog {
   height: 100%;
 }
 .book-title {
+  color: var(--text);
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 .book-info {
   font-size: 15px;
-  color: #555;
+  color: var(--text-muted)
   margin-bottom: 10px;
 }
 input[type="checkbox"] {
@@ -86,25 +107,27 @@ input[type="checkbox"] {
   accent-color: green;
 }
 .btn-add {
-  background-color: #6c63b5;
+  background-color: var(--bg-light);
 }
 .btn-delete {
-  background-color: #ff4d4d;
+  background-color: var(--bg-light);
 }
 .btn {
-  color: white;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 4px;
+  background-color: var(--bg-light);
+  color: var(--text);
+  padding: 10px 20px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  font-style: initial;
+  border: none;
 }
-.btn-delete:hover {
-  background-color: #a01414;
+.btn:hover {
+  background-color: var(--bg-lightest);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .bookcard {
-  border: 1px solid #ccc;
+  background-color: var(--bg-lighter);
+  border: 1px solid var(--bg-light);
   padding: 10px;
   margin: 10px;
   width: 200px;
@@ -113,7 +136,6 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -128,7 +150,6 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-size: 15px;
   font-weight: bold;
   padding: 2px;
@@ -141,9 +162,7 @@ input[type="checkbox"] {
   justify-content: center;
   margin-top: 20px;
 }
-.btn-add:hover {
-  background-color: #7a6ae0;
-}
+
 .status-container {
   display: flex;
   flex-direction: row;
@@ -182,12 +201,4 @@ input {
 input:focus {
   border: 1px solid #007bff; /* změna tloušťky a barvy */
   outline: none; /* odstraní modré blikající okraje v Chrome */
-}
-
-#confirmBtn {
-  background-color: #60c06d;
-  color: white;
-}
-#confirmBtn:hover {
-  background-color: #397040;
 }
