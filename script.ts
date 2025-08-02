@@ -21,6 +21,16 @@ const addButton = document.querySelector(".btn-add");
 const closeButton = document.querySelector("#closeButton");
 const confirmButton = document.querySelector("#confirmBtn");
 const bookForm = document.querySelector("#add-book-form") as HTMLFormElement;
+const btnMode = document.querySelector("#mode") as HTMLFormElement;
+
+btnMode?.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  if (document.body.classList.contains("light")) {
+    btnMode.textContent = "🌙";
+  } else {
+    btnMode.textContent = "☀️";
+  }
+});
 
 showButton?.addEventListener("click", () => {
   console.log(myLibrary);
